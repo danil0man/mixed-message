@@ -2,6 +2,10 @@
 // please give feedback and make any changes you think would be beneficial (this is
 // just my first stab, not the answer!)
 
+// All three functions could (maybe should?) be combined into one
+// But it may be easier for us to work on them as separate functions, and then combine 
+// them once theyre all complete? As long as we use standard variable names it would
+// work? 
 
 // time and day function
 //      1) get time and day from native javascript function.
