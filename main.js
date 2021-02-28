@@ -2,16 +2,48 @@
 // please give feedback and make any changes you think would be beneficial (this is
 // just my first stab, not the answer!)
 
-// All three functions could (maybe should?) be combined into one
-// But it may be easier for us to work on them as separate functions, and then combine 
-// them once theyre all complete? As long as we use standard variable names it would
-// work? 
+// Description from the Kanban Board:
+// Create a menu maker that Mon - Sat will create a new random menu (breakfast, lunch, dinner) 
+// and Sun (brunch, dinner).  
+// Breakfast is from 8 am - 11 am, 
+// lunch 11 am to 5 pm, 
+// dinner 5 pm to 10 pm.  
+// Brunch on Sunday is from 8 am to 5 pm, then dinner from 5 to 10
 
-// time and day function
-//      1) get time and day from native javascript function.
-//      2) categorize time of day into meal type (breakfast, brunch, lunch, dinner).
-//             - save variable typeOfMeal
-//      3) return typeOfMeal, and dayOfWeek standard format.
+
+// Get time and day
+var d = new Date();
+let currentHour = d.getHours(); // returns 0 through 23
+let currentDay = d.getDay(); // returns weekday 0 through 6 starting with Sunday.
+let dayOfWeek;
+if (currentDay == 0) {
+    dayOfWeek = 'Sunday';
+} else if (currentDay == 1) {
+    dayOfWeek = 'Monday';
+} else if (currentDay == 2) {
+    dayOfWeek = 'Tuesday';
+} else if (currentDay == 3) {
+    dayOfWeek = 'Wednesday';
+} else if (currentDay == 4) {
+    dayOfWeek = 'Thursday';
+} else if (currentDay == 5) {
+    dayOfWeek = 'Friday';
+} else {
+    dayOfWeek = 'Saturday';
+};
+// Categorize time of day into meal type.
+let typeOfMeal;
+if (currentHour < 22 && currentHour >= 17) {
+    typeOfMeal = 'dinner';
+} else if (currentHour < 17 && currentHour >= 11 && currentDay != 0) {
+    typeOfMeal = 'lunch';
+} else if (currentHour < 11 && currentHour >= 8 && currentDay != 0) {
+    typeOfMeal = 'breakfast';
+} else if (currentHour < 17 && currentHour >= 8 && currentDay == 0) {
+    typeOfMeal = 'brunch';
+} else {
+    typeOfMeal = 'none' // restaurant is closed.
+};
 
 
 // The menu could be an object, with objects for meal type, then arrays for 
