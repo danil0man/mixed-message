@@ -1,77 +1,80 @@
-// Team- below is just an outline using pseudo code of how I think the script could go
+
 // please give feedback and make any changes you think would be beneficial (this is
 // just my first stab, not the answer!)
 
-// Description from the Kanban Board:
-// Create a menu maker that Mon - Sat will create a new random menu (breakfast, lunch, dinner) 
-// and Sun (brunch, dinner).  
-// Breakfast is from 8 am - 11 am, 
-// lunch 11 am to 5 pm, 
-// dinner 5 pm to 10 pm.  
-// Brunch on Sunday is from 8 am to 5 pm, then dinner from 5 to 10
 
-
-// Get time and day
-var d = new Date();
-let currentHour = d.getHours(); // returns 0 through 23
-let currentDay = d.getDay(); // returns weekday 0 through 6 starting with Sunday.
+// we want these two variables to be global
 let dayOfWeek;
-if (currentDay == 0) {
-    dayOfWeek = 'Sunday';
-} else if (currentDay == 1) {
-    dayOfWeek = 'Monday';
-} else if (currentDay == 2) {
-    dayOfWeek = 'Tuesday';
-} else if (currentDay == 3) {
-    dayOfWeek = 'Wednesday';
-} else if (currentDay == 4) {
-    dayOfWeek = 'Thursday';
-} else if (currentDay == 5) {
-    dayOfWeek = 'Friday';
-} else {
-    dayOfWeek = 'Saturday';
-};
-// Categorize time of day into meal type.
 let typeOfMeal;
-if (currentHour < 22 && currentHour >= 17) {
-    typeOfMeal = 'dinner';
-} else if (currentHour < 17 && currentHour >= 11 && currentDay != 0) {
-    typeOfMeal = 'lunch';
-} else if (currentHour < 11 && currentHour >= 8 && currentDay != 0) {
-    typeOfMeal = 'breakfast';
-} else if (currentHour < 17 && currentHour >= 8 && currentDay == 0) {
-    typeOfMeal = 'brunch';
-} else {
-    typeOfMeal = 'none' // restaurant is closed.
+
+// to get dayOfWeek and typeOfMeal into the DOM
+const day = document.querySelector(.day);
+const meal = document.querySelector(.meal);
+
+// we need this function to run as soon as the web page is opened
+// Get time and day
+const timeAndDay = () => {
+    var d = new Date();
+    let currentHour = d.getHours(); // returns 0 through 23
+    let currentDay = d.getDay(); // returns weekday 0 through 6 starting with Sunday.
+    if (currentDay == 0) {
+        dayOfWeek = 'Sunday';
+    } else if (currentDay == 1) {
+        dayOfWeek = 'Monday';
+    } else if (currentDay == 2) {
+        dayOfWeek = 'Tuesday';
+    } else if (currentDay == 3) {
+        dayOfWeek = 'Wednesday';
+    } else if (currentDay == 4) {
+        dayOfWeek = 'Thursday';
+    } else if (currentDay == 5) {
+        dayOfWeek = 'Friday';
+    } else {
+        dayOfWeek = 'Saturday';
+    };
+    // Categorize time of day into meal type.
+    if (currentHour < 22 && currentHour >= 17) {
+        typeOfMeal = 'Dinner';
+    } else if (currentHour < 17 && currentHour >= 11 && currentDay != 0) {
+        typeOfMeal = 'Lunch';
+    } else if (currentHour < 11 && currentHour >= 8 && currentDay != 0) {
+        typeOfMeal = 'Breakfast';
+    } else if (currentHour < 17 && currentHour >= 8 && currentDay == 0) {
+        typeOfMeal = 'Brunch';
+    } else {
+        typeOfMeal = 'None' // restaurant is closed.
+    };
+    // to get dayOfWeek and typeOfMeal into the DOM
+    day.innerHTML = dayOfWeek;
+    meal.innerHTML = typeOfMeal;
 };
 
-
-// The menu could be an object, with objects for meal type, then arrays for 
+// The menu is an object, with objects for meal type, then arrays for 
 // individual items.
-// const menu {
-//     breakfast {
-//          drinks: [drink1, drink2, etc...],
-//          sides: [side1, side2, etc...],
-//          mains: [main1, main2, etc...]
-//     },
-//     brunch {
-//          drinks: [drink1, drink2, etc...],
-//          sides: [side1, side2, etc...],
-//          mains: [main1, main2, etc...]
-//     },
-//     lunch {
-//          drinks: [drink1, drink2, etc...],
-//          sides: [side1, side2, etc...],
-//          mains: [main1, main2, etc...],
-//          desserts: [dessert1, dessert2, etc... ]
-//     },
-//     dinner {
-//          drinks: [drink1, drink2, etc...],
-//          sides: [side1, side2, etc...],
-//          mains: [main1, main2, etc...],
-//          desserts: [dessert1, dessert2, etc... ]
-//     }
-// }    
+const menu  = { 
+    Breakfast: {
+         drinks: ['drink1', 'drink2', 'drink3'],
+         sides: ['side1', 'side2', 'side2'],
+         mains: ['main1', 'main2', 'main3']
+    },
+    Brunch: {
+        drinks: ['drink1', 'drink2', 'drink3'],
+        sides: ['side1', 'side2', 'side2'],
+        mains: ['main1', 'main2', 'main3']
+    },
+    Lunch: {
+        drinks: ['drink1', 'drink2', 'drink3'],
+        sides: ['side1', 'side2', 'side2'],
+        mains: ['main1', 'main2', 'main3'],
+        desserts: ['dessert1', 'dessert2', 'dessert3']
+    },
+    Dinner: {
+        drinks: ['drink1', 'drink2', 'drink3'],
+        sides: ['side1', 'side2', 'side2'],
+        mains: ['main1', 'main2', 'main3'],
+        desserts: ['dessert1', 'dessert2', 'dessert3']
+    }
+};    
 
 
 // meal randomizer function (inputs: typeOfMeal, dayOfWeek)
