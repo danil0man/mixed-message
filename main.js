@@ -49,6 +49,8 @@ const timeAndDay = () => {
     meal.innerHTML = typeOfMeal;
 };
 
+timeAndDay();
+
 // The menu is an object, with objects for meal type, then arrays for 
 // individual items.
 const menu  = { 
