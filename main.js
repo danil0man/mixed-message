@@ -8,8 +8,8 @@ let dayOfWeek;
 let typeOfMeal;
 
 // to get dayOfWeek and typeOfMeal into the DOM
-const day = document.querySelector(.day);
-const meal = document.querySelector(.meal);
+const day = document.querySelector('.day');
+const meal = document.querySelector('.meal');
 
 // we need this function to run as soon as the web page is opened
 // Get time and day
@@ -31,7 +31,7 @@ const timeAndDay = () => {
         dayOfWeek = 'Friday';
     } else {
         dayOfWeek = 'Saturday';
-    };
+    }
     // Categorize time of day into meal type.
     if (currentHour < 22 && currentHour >= 17) {
         typeOfMeal = 'Dinner';
@@ -42,8 +42,8 @@ const timeAndDay = () => {
     } else if (currentHour < 17 && currentHour >= 8 && currentDay == 0) {
         typeOfMeal = 'Brunch';
     } else {
-        typeOfMeal = 'None' // restaurant is closed.
-    };
+        typeOfMeal = 'None'; // restaurant is closed.
+    }
     // to get dayOfWeek and typeOfMeal into the DOM
     day.innerHTML = dayOfWeek;
     meal.innerHTML = typeOfMeal;
@@ -55,9 +55,9 @@ timeAndDay();
 // individual items.
 const menu  = { 
     Breakfast: {
-         drinks: ['drink1', 'drink2', 'drink3'],
-         sides: ['side1', 'side2', 'side2'],
-         mains: ['main1', 'main2', 'main3']
+        drinks: ['drink1', 'drink2', 'drink3'],
+        sides: ['side1', 'side2', 'side2'],
+        mains: ['main1', 'main2', 'main3']
     },
     Brunch: {
         drinks: ['drink1', 'drink2', 'drink3'],
