@@ -10,9 +10,33 @@
 </head>
 
 <body>
+
     <div class="main">
-        <p>Today is <span class="day"></span></p>
-        <p>We recommend eating <span class="meal"></span></p>
+        <!-- Presentation Area -->
+        <div class="presentation">
+            <!-- Logo -->
+            <img src="./img/logo.png" alt="ATX logo" class="logo">
+            <!-- Main  Heading -->
+            <h1 class="main__heading">Welcome to Menu Generator</h1>
+            <!-- Timer -->
+            <p class="timer">XX:XX</p>
+            <!-- Form  -->
+            <select id="food" class="selection">
+                <option value="" disabled selected style="color: lightgrey;">Select an option</option>
+                <option value="breakfast" style="padding: 2rem;">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+            <input type="button" value="Generate Menu" onclick="getMenu();" class="btn" />
+        </div>
+        <div class="menu">
+            <!-- Type of Menu -->
+            <h2 class="menu__heading"></h2>
+            <!-- Menu -->
+            <div class="display">
+                <p class="showtext"></p>
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>
