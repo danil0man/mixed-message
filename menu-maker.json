@@ -1,0 +1,107 @@
+{
+	"breakfast": [{
+			"meal": "Blueberry-Banana-Nut Smoothie",
+			"price": "$5.50"
+		},
+		{
+			"meal": "Classic Omelet and Greens",
+			"price": "$8.50"
+		},
+		{
+			"meal": "Very Berry Quinoa Muffins",
+			"price": "$6.50"
+		},
+		{
+			"meal": "Shakshuka",
+			"price": "$9.50"
+		},
+		{
+			"meal": "Best-Ever Granola",
+			"price": "$8.50"
+		},
+		{
+			"meal": "Green Eggs and Ham'Wich",
+			"price": "$9.50"
+		}
+	],
+
+
+	"brunch": [{
+			"meal": "My Favorite Banana Pancakes",
+			"price": "$11.50"
+		},
+		{
+			"meal": "Spinach Artichoke Pizza",
+			"price": "$12.50"
+		},
+		{
+			"meal": "Rainbow Kale Salad with Carrot Ginger Dressing",
+			"price": "$12.50"
+		},
+		{
+			"meal": "Blueberry Feta Flatbread",
+			"price": "$9.50"
+		},
+		{
+			"meal": "Breakfast Panzanella",
+			"price": "$12.50"
+		},
+		{
+			"meal": "Chilaquiles with Avocado",
+			"price": "$9.50"
+		}
+	],
+
+	"lunch": [{
+			"meal": "Chikpea Salad Sandwich",
+			"price": "$8.50"
+		},
+		{
+			"meal": "Mediterranean Lentil Soup",
+			"price": "$6.50"
+		},
+		{
+			"meal": "Peanut Soba Noodles with Vegetable Salad",
+			"price": "$10.50"
+		},
+		{
+			"meal": "Cheddar and Apple Grilled Cheese Sandwiches",
+			"price": "$8.00"
+		},
+		{
+			"meal": "Mediterranean Tuna Wrap",
+			"price": "$7.00"
+		},
+		{
+			"meal": "Nordic Shrimp Toast",
+			"price": "$9.00"
+		}
+	],
+
+	"dinner": [{
+			"meal": "Broccoli Pesto Pasta",
+			"price": "$15.50"
+		},
+		{
+			"meal": "Baked Salmon with Grapefruit Salad",
+			"price": "$18.50"
+		},
+		{
+			"meal": "Lemon Chicken",
+			"price": "$16.50"
+		},
+		{
+			"meal": "Ratatouille Sheet Pan Dinner with Sausage",
+			"price": "$19.50"
+		},
+		{
+			"meal": "Chicken Marinara with Polenta",
+			"price": "$18.50"
+		},
+		{
+			"meal": "Hoisin Glazed Pork Chops",
+			"price": "$19.50"
+		}
+	]
+
+}
