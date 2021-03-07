@@ -20,7 +20,7 @@
             <h1 class="main__heading">Welcome to Menu Generator</h1>
             <!-- Timer -->
             <p class="timer">XX:XX</p>
-            <!-- Form  -->
+            <!-- Food Options  -->
             <select id="food" class="selection">
                 <option value="" disabled selected style="color: lightgrey;">Select an option</option>
                 <option value="breakfast" style="padding: 2rem;">Breakfast</option>
@@ -28,20 +28,16 @@
                 <option value="lunch">Lunch</option>
                 <option value="dinner">Dinner</option>
             </select>
-            <input type="button" value="Generate Menu" onclick="getMenu();" class="btn" />
+            <!-- Number of Menus -->
+            <label for="number" class="text">How many menus you need?</label>
+            <input type="number" name="number" id="number" min="1" max="5" value="1">
+            <input type="button" value="Generate Menu" class="btn" />
         </div>
         <div class="menu">
             <!-- Type of Menu -->
             <h2 class="menu__heading"></h2>
             <!-- Menu -->
             <div class="display">
-                <p class="showtext"></p>
-            </div>
-            <div class="display">
-                <p class="showtext"></p>
-            </div>
-            <div class="display">
-                <p class="showtext"></p>
             </div>
         </div>
     </div>
